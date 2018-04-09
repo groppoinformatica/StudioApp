@@ -2,7 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { StackNavigator } from 'react-navigation'
 
-//import Inicio from './src/features/Inicio' -> Cria classe Inicio
+import Login from './src/features/Login'
+import Inicio from './src/features/Inicio'
 
 export default class App extends React.Component {
   render() {
@@ -15,7 +16,7 @@ export default class App extends React.Component {
 const AppStackNavigation = StackNavigator({
 
   Main: {
-    screen: Inicio
+    screen: Login
   }  
 
 })
