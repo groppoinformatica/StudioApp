@@ -6,12 +6,12 @@ export default class Login extends Component {
   render() {
     return (
       <View>
-        <TextInput>
-            
-        </TextInput>
-        <TextInput>
-
-        </TextInput>
+        <TextInput
+           placeholder="Login"   
+        />
+        <TextInput
+          placeholder="Senha"
+        />
         <TouchableHighlight>
             
         </TouchableHighlight>
