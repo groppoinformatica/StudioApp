@@ -7,7 +7,7 @@ export default class ImageBackground extends Component {
         <View style={styles.container}>
           <Image
             style={styles.image}
-            source={require('../../assets/images/FundoCabeleireiro.jpg')} />
+            source={require('../../assets/images/BackGroundSalao.jpg')} />
         </View>
     )
   }

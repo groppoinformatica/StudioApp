@@ -38,6 +38,7 @@ export default class Login extends Component {
   render() {
     return (
       <View style={styles.boxContainer}>
+      <ImageBackground/>
         <TouchableWithoutFeedback onPress={this.dismiss}>
           <View style={styles.boxContent}>
 
@@ -45,23 +46,44 @@ export default class Login extends Component {
               <Text style={styles.titulo}>Ikeda</Text>
             </View>
 
-            <View style={styles.boxInput}>
+            <View style={styles.boxControls}>
 
               <TextInput
-                autoCapitalize="none"
-                style={styles.inputs}
-                underlineColorAndroid="rgba(0, 0, 0, 0)"
                 placeholder="Login"
-              />
-              <TextInput
-                autoCapitalize="none"
                 style={styles.inputs}
-                underlineColorAndroid="rgba(0, 0, 0, 0)"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                blurOnSubmit={ false }
+                returnKeyType={ "next" }
+                onChangeText={(email) =>
+                  this.setState({email})}
+                onSubmitEditing={() => {
+                  this.focusNextField('Password');
+                }}              
+                ref={ input => {
+                  this.inputs['E-mail'] = input;
+                }}
+                value={this.state.email}
+              />
+
+              <TextInput
                 placeholder="Senha"
-              />        
+                style={styles.inputs}
+                secureTextEntry={true}
+                blurOnSubmit={ true }
+                returnKeyType={ "done" }
+                onChangeText={(password) =>
+                  this.setState({password})}
+                ref={ input => {
+                  this.inputs['Password'] = input;
+                }}              
+                value={this.state.password}
+              />
 
               <TouchableOpacity style={styles.button} >
-                <Text style={styles.buttonText}>Confirmar</Text>
+                <Text style={styles.buttonText}>
+                  Confirmar
+                </Text>
               </TouchableOpacity>
 
             </View>
@@ -88,18 +110,18 @@ const styles = StyleSheet.create({
   },
 
   boxHeader: {
-    flex: 1,
+    flex: 2,
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'flex-end',
     justifyContent: 'center',
   },
 
-  boxInput: {
+  boxControls: {
     flex: 4,
     marginTop: 10,
     paddingVertical: 20,
     paddingHorizontal: 20,
-    justifyContent: 'space-around',
+    justifyContent: 'center',
   },
 
   boxFooter: {
@@ -111,10 +133,14 @@ const styles = StyleSheet.create({
   },
 
   inputs: {
-    backgroundColor: '#FFF',
-    color : 'blue',
-    padding: 20,
-    height: 60,
+    // backgroundColor: '#FFF',
+    height: 45,
+    marginBottom: 10,
+    borderColor: 'white',
+    borderRadius: 3,
+    borderBottomWidth: 1,
+    color: 'white',
+    fontSize: 16,
   },
 
   button: {
@@ -124,6 +150,7 @@ const styles = StyleSheet.create({
     borderRadius: 3,
     borderColor: '#000',
     backgroundColor: '#70BD85',
+    marginTop: 10,
   },
 
   buttonText: {
@@ -141,5 +168,6 @@ const styles = StyleSheet.create({
   
   footerText: {
     fontStyle: 'italic',
+    color: 'white',
   },
 });
