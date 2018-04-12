@@ -1,105 +1,145 @@
 import React, { Component } from 'react';
-import {  StyleSheet, View, Text, TextInput, Modal, TouchableOpacity } from 'react-native';
+import {  StyleSheet,
+  View, 
+  Text, 
+  TextInput, 
+  Modal, 
+  TouchableOpacity,
+  Keyboard,
+  TouchableWithoutFeedback, } from 'react-native';
 import ImageBackground from '../layouts/ImageBackground'
 
 export default class Login extends Component {
-     
+  constructor (props) {
+    super(props)
+    
+    this.doLogin = this.doLogin.bind(this)
+    this.focusNextField = this.focusNextField.bind(this);
+    this.inputs = {};
+    this.state = {
+      email: '',
+      password: ''
+    }
+  }
+  dismiss () {
+    Keyboard.dismiss()
+  }
+  doLogin () {
+    const { email, password } = this.state
+    if (email && password) {
+      const cleanEmail = email.toLowerCase().trim()
+      // authRepository.signin(cleanEmail, password)
+    }
+  }
+  focusNextField(id) {
+    this.inputs[id].focus();
+  }
+
   render() {
     return (
-      <View style={styles.modalContainer}>    
-        <ImageBackground/>   
-        <View style={styles.boxContainer}>
-          <Text style={styles.titulo}>Salão do Fabio</Text> 
-          <TextInput
-            autoFocus
-            autoCapitalize="none"
-            style={styles.boxInput}
-            underlineColorAndroid="rgba(0, 0, 0, 0)"
-            placeholder=" Login "  
-          />
-          <TextInput
-            autoFocus
-            autoCapitalize="none"
-            style={styles.boxInput}
-            underlineColorAndroid="rgba(0, 0, 0, 0)"
-            placeholder=" Senha "
-          />
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity 
-              style={[styles.button, styles.submitButton]} >
-            <Text style={styles.buttonText}>Confirmar</Text>
-            </TouchableOpacity>
-            <TouchableOpacity 
-              style={[styles.button, styles.cancelButton]} >
-              <Text style={styles.buttonText}>Sair</Text>
-            </TouchableOpacity>
+      <View style={styles.boxContainer}>
+        <TouchableWithoutFeedback onPress={this.dismiss}>
+          <View style={styles.boxContent}>
+
+            <View style={styles.boxHeader}>
+              <Text style={styles.titulo}>Ikeda</Text>
+            </View>
+
+            <View style={styles.boxInput}>
+
+              <TextInput
+                autoCapitalize="none"
+                style={styles.inputs}
+                underlineColorAndroid="rgba(0, 0, 0, 0)"
+                placeholder="Login"
+              />
+              <TextInput
+                autoCapitalize="none"
+                style={styles.inputs}
+                underlineColorAndroid="rgba(0, 0, 0, 0)"
+                placeholder="Senha"
+              />        
+
+              <TouchableOpacity style={styles.button} >
+                <Text style={styles.buttonText}>Confirmar</Text>
+              </TouchableOpacity>
+
+            </View>
+
+            <View style={styles.boxFooter}>
+              <Text style={styles.footerText}>Desenvolvido por Groppo Informática</Text>
+            </View>
+
           </View>
-        </View>
+        </TouchableWithoutFeedback>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  modalContainer: {
-    flex: 1,
-    // backgroundColor: 'rgba(0, 0, 0, 0.7)',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
   boxContainer: {
-    padding: 120,
-    // backgroundColor: '#FFF',
-    borderRadius: 10,
-    alignItems: 'center',
-    width: 500,
+    flex: 1,
   },
 
-  titulo: {
-    fontWeight: 'bold',
-    fontSize: 60,
-    color: 'pink'
+  boxContent: {
+    flex: 1,
+    alignItems: 'stretch',
+  },
+
+  boxHeader: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 
   boxInput: {
-    alignSelf: 'stretch',
+    flex: 4,
     marginTop: 10,
-    paddingVertical: 0,
+    paddingVertical: 20,
     paddingHorizontal: 20,
-    borderWidth: 1,
-    borderColor: '#000',
-    height: 40,
-    borderRadius: 3,
+    justifyContent: 'space-around',
   },
 
-  buttonContainer: {
-    marginTop: 10,
-    height: 40,
-    flexDirection: 'row',
+  boxFooter: {
+    flex: 1,
+    flexDirection: 'column',
+    alignItems: 'flex-end',
+    justifyContent: 'flex-end',
+    padding: 10,
+  },
+
+  inputs: {
+    backgroundColor: '#FFF',
+    color : 'blue',
+    padding: 20,
+    height: 60,
   },
 
   button: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    height: 50,
     borderRadius: 3,
     borderColor: '#000',
+    backgroundColor: '#70BD85',
   },
 
   buttonText: {
     fontWeight: 'bold',
     color: '#FFF',
-    fontSize: 12,
+    fontSize: 18,
   },
 
-  cancelButton: {
-    backgroundColor: '#E25F5F',
-    marginRight: 5,
+  titulo: {
+    fontWeight: 'bold',
+    fontSize: 60,
+    color: 'black',
+    color: 'orange',
   },
-
-  submitButton: {
-    backgroundColor: '#70BD85',
-    marginRight: 5,
+  
+  footerText: {
+    fontStyle: 'italic',
   },
 });
