@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  View, Text, TextInput } from 'react-native';
+import {  StyleSheet, View, Text, TextInput } from 'react-native';
 
 export default class Inicio extends Component {
   render() {
