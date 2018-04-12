@@ -9,7 +9,7 @@ export default class Login extends Component {
       <View style={styles.modalContainer}>    
         <ImageBackground/>   
         <View style={styles.boxContainer}>
-          <Text style={styles.titulo}>Salão do Fabio</Text> 
+          <Text style={styles.titulo}>Cabeleireiro</Text> 
           <TextInput
             autoFocus
             autoCapitalize="none"
@@ -18,7 +18,7 @@ export default class Login extends Component {
             placeholder=" Login "  
           />
           <TextInput
-            autoFocus
+            //autoFocus
             autoCapitalize="none"
             style={styles.boxInput}
             underlineColorAndroid="rgba(0, 0, 0, 0)"
@@ -27,11 +27,13 @@ export default class Login extends Component {
           <View style={styles.buttonContainer}>
             <TouchableOpacity 
               style={[styles.button, styles.submitButton]} >
-            <Text style={styles.buttonText}>Confirmar</Text>
+              <Text style={styles.buttonText}>Confirmar</Text>
             </TouchableOpacity>
-            <TouchableOpacity 
-              style={[styles.button, styles.cancelButton]} >
-              <Text style={styles.buttonText}>Sair</Text>
+          </View>
+          <View style={styles.buttonContainer}>
+            <TouchableOpacity
+              style={[styles.button, styles.signUp]}>
+              <Text style={styles.buttonText}>Cadastre-se</Text>
             </TouchableOpacity>
           </View>
         </View>
@@ -58,8 +60,8 @@ const styles = StyleSheet.create({
 
   titulo: {
     fontWeight: 'bold',
-    fontSize: 60,
-    color: 'pink'
+    fontSize: 48,
+    color: '#F5F5F5'
   },
 
   boxInput: {
@@ -68,6 +70,7 @@ const styles = StyleSheet.create({
     paddingVertical: 0,
     paddingHorizontal: 20,
     borderWidth: 1,
+    color: 'white',
     borderColor: '#000',
     height: 40,
     borderRadius: 3,
@@ -81,25 +84,28 @@ const styles = StyleSheet.create({
 
   button: {
     flex: 1,
+    alignSelf: 'stretch',
     alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 3,
-    borderColor: '#000',
+    backgroundColor: 'orange',
+    paddingHorizontal: 10,
+    marginHorizontal: 20,
+    marginBottom: 20,
+    height: 35
   },
 
   buttonText: {
     fontWeight: 'bold',
-    color: '#FFF',
+    color: '#000',
     fontSize: 12,
   },
 
-  cancelButton: {
-    backgroundColor: '#E25F5F',
-    marginRight: 5,
+  submitButton: {
+    backgroundColor: 'orange',
+    marginRight: 5,   
   },
 
-  submitButton: {
-    backgroundColor: '#70BD85',
+  signUp: {
+    backgroundColor: '#7CFC00',
     marginRight: 5,
   },
 });
