@@ -3,11 +3,12 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Login from './src/features/Login'
 import Inicio from './src/features/Inicio'
+import Cadastro from './src/features/Cadastro'
 
 export default class App extends Component {
   render() {
     return (
-      <Login/>
+      <Cadastro/>
     )
   }
 }
