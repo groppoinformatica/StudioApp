@@ -83,6 +83,12 @@ export default class Cadastro extends Component {
                   Confirmar
                 </Text>
               </TouchableOpacity>
+
+              <TouchableOpacity style={styles.buttonSa} >
+                <Text style={styles.buttonText}>
+                  Sair
+                </Text>
+              </TouchableOpacity>
             </View>
       </View>
     );
@@ -129,7 +135,7 @@ const styles = StyleSheet.create({
       borderColor: 'white',
       borderRadius: 3,
       borderBottomWidth: 1,
-      color: 'white',
+      color: 'black',
       fontSize: 16,
     },
   
@@ -140,6 +146,17 @@ const styles = StyleSheet.create({
       borderRadius: 3,
       borderColor: '#000',
       backgroundColor: '#70BD85',
+      marginTop: 10,
+    },
+
+      
+    buttonSa: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: 50,
+      borderRadius: 3,
+      borderColor: '#000',
+      backgroundColor: 'red',
       marginTop: 10,
     },
   

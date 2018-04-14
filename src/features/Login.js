@@ -88,6 +88,12 @@ export default class Login extends Component {
 
             </View>
 
+            <TouchableOpacity style={styles.buttonCa} >
+              <Text style={styles.buttonTextCa}>
+              Cadastre-se
+              </Text>
+            </TouchableOpacity>
+
             <View style={styles.boxFooter}>
               <Text style={styles.footerText}>Desenvolvido por Groppo Informática</Text>
             </View>
@@ -154,6 +160,22 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
+    fontWeight: 'bold',
+    color: '#FFF',
+    fontSize: 18,
+  },
+
+  buttonCa: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: 50,
+    borderRadius: 3,
+    borderColor: '#000',
+    backgroundColor: 'orange',
+    marginTop: 25,
+  },
+
+  buttonTextCa: {
     fontWeight: 'bold',
     color: '#FFF',
     fontSize: 18,
