@@ -88,12 +88,6 @@ export default class Login extends Component {
 
             </View>
 
-            <TouchableOpacity style={styles.buttonCa} >
-              <Text style={styles.buttonTextCa}>
-              Cadastre-se
-              </Text>
-            </TouchableOpacity>
-
             <View style={styles.boxFooter}>
               <Text style={styles.footerText}>Desenvolvido por Groppo Informática</Text>
             </View>
@@ -111,7 +105,7 @@ const styles = StyleSheet.create({
   },
 
   boxContent: {
-    flex: 1,
+    flex: 1, 
     alignItems: 'stretch',
   },
 
@@ -127,7 +121,10 @@ const styles = StyleSheet.create({
     marginTop: 10,
     paddingVertical: 20,
     paddingHorizontal: 20,
+    backgroundColor: 'white',
     justifyContent: 'center',
+    width: 400,
+    alignSelf: 'center',
   },
 
   boxFooter: {

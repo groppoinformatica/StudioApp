@@ -12,28 +12,9 @@ export default class Inicio extends Component {
             placeholder= "Numero da Comanda"
             style={styles.inputs} 
           />
-          <View style={styles.boxBody}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-              1
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-              2
-            </Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.buttonText}>
-              3
-            </Text>
-          </TouchableOpacity>
+        <View style={styles.boxBody}>
+          
         </View>
-      <View>
-      </View>
-
       </View>
     );
   }
@@ -53,11 +34,18 @@ boxHeader: {
 },
 
 boxBody: {
-  flex: 2,
-  alignItems: 'flex-end',
+  flex: 4,
+  alignItems: 'stretch',
   flexDirection: 'column',
   justifyContent: 'center',
   padding: 10,
+},
+
+boxBodyCentro: {
+  flex: 4,
+  alignItems: 'stretch',
+  flexDirection: 'row',
+  justifyContent: 'center',
 },
 
 titulo: {
@@ -68,7 +56,6 @@ titulo: {
 },
 
 inputs: {
-  // backgroundColor: '#FFF',
   height: 45,
   marginBottom: 10,
   borderColor: 'white',
@@ -87,7 +74,8 @@ buttonText: {
 button: {
   alignItems: 'center',
   justifyContent: 'center',
-  height: 50,
+  height: 100,
+  width: 140,
   borderRadius: 3,
   borderColor: '#000',
   backgroundColor: '#70BD85',
