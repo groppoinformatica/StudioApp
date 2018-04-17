@@ -5,15 +5,81 @@ export default class Inicio extends Component {
   render() {
     return (
       <View style={styles.boxContainer}>
-        <View style={styles.boxHeader}>
-          <Text style={styles.titulo}>Comanda</Text>
-        </View>
-          <TextInput
-            placeholder= "Numero da Comanda"
-            style={styles.inputs} 
-          />
-        <View style={styles.boxBody}>
+
+        <View style={styles.boxContent}>
           
+          <View style={styles.boxHeader}>
+
+            <View style={styles.boxHeaderInf}>
+              <Text style={styles.corpo}>Ikeda</Text>
+              <Text style={styles.corpo}>09:40</Text>
+              <View style={styles.boxOpcoes}>
+                <TouchableOpacity style={styles.button} >
+                  <Text style={styles.buttonText}>
+                    Conf
+                  </Text>
+                </TouchableOpacity> 
+
+                <TouchableOpacity style={styles.button} >
+                  <Text style={styles.buttonText}>
+                    Logout
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            </View>
+
+            <View style={styles.boxHeaderMenu}>
+              <Text style={styles.corpo2}>Bem Vindo, Operador</Text>
+
+            </View>
+
+          </View>
+
+          <View style={styles.boxBody}>
+
+            <View style={styles.boxBotoes}>
+
+              <TouchableOpacity style={styles.button2} >
+                <Text style={styles.buttonText}>
+                  Colaboradores
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.button2} >
+                <Text style={styles.buttonText}>
+                  Comandas
+                </Text>
+              </TouchableOpacity> 
+
+            </View>
+
+            <View style={styles.boxBotoes}>
+
+              <TouchableOpacity style={styles.button2} >
+                <Text style={styles.buttonText}>
+                  Clientes
+                </Text>
+              </TouchableOpacity>
+
+              <TouchableOpacity style={styles.button2} >
+                <Text style={styles.buttonText}>
+                  Estoques
+                </Text>
+              </TouchableOpacity>  
+            </View>
+
+            <View style={styles.boxBotoes}>
+
+              <TouchableOpacity style={styles.button2} >
+                <Text style={styles.buttonText}>
+                  Serviços
+                </Text>
+              </TouchableOpacity>
+
+            </View>
+
+          </View>
+
         </View>
       </View>
     );
@@ -23,62 +89,121 @@ export default class Inicio extends Component {
 const styles = StyleSheet.create({
   boxContainer: {
   flex: 1,
-  backgroundColor: 'white',
+  backgroundColor: '#F5F5F5',
+  flexDirection: 'column',
+},
+
+boxContent: {
+  flex: 1, 
+  alignItems: 'stretch',
 },
 
 boxHeader: {
   flex: 1,
-  flexDirection: 'row',
-  alignItems: 'flex-end',
-  justifyContent: 'center',
-},
-
-boxBody: {
-  flex: 4,
-  alignItems: 'stretch',
   flexDirection: 'column',
-  justifyContent: 'center',
-  padding: 10,
-},
-
-boxBodyCentro: {
-  flex: 4,
   alignItems: 'stretch',
-  flexDirection: 'row',
   justifyContent: 'center',
-},
-
-titulo: {
-  fontWeight: 'bold',
-  fontSize: 60,
-  color: 'black',
-  color: 'orange',
-},
-
-inputs: {
-  height: 45,
-  marginBottom: 10,
-  borderColor: 'white',
+  marginTop: 10,
   borderRadius: 3,
-  borderBottomWidth: 1,
-  color: 'black',
-  fontSize: 16,
+  borderColor: 'black',
+  paddingVertical: 20,
+  paddingHorizontal: 20,
 },
 
-buttonText: {
+boxHeaderInf: {
+  flex: 1,
+  flexDirection: 'row',
+  alignItems: 'stretch',
+  marginTop: 2,
+  borderRadius: 5,
+  borderColor: 'black',
+  justifyContent: 'space-between',
+  paddingHorizontal: 20,
+  paddingVertical: 2,
+  backgroundColor: '#87CEFA'
+},
+
+boxHeaderMenu: {
+  flex: 3,
+  flexDirection: 'row',
+  alignItems: 'stretch',
+  marginTop: 2,
+  borderRadius: 3,
+  borderTopColor: 'black',
+  justifyContent: 'space-between',
+  paddingHorizontal: 20,
+  paddingVertical: 10,
+},
+
+boxOpcoes: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+},
+
+boxBotoes: {
+  flex: 1,
+  flexDirection: 'column',
+  alignItems: 'center',
+  justifyContent: 'space-around',
+  padding: 20,
+  height: 300,
+  width: 100,
+},
+
+corpo: {
   fontWeight: 'bold',
-  color: '#FFF',
-  fontSize: 18,
+  fontSize: 26,
+  color: 'black',
+},
+
+corpo2: {
+  fontWeight: 'bold',
+  fontSize: 20,
+  color: 'black',
 },
 
 button: {
   alignItems: 'center',
-  justifyContent: 'center',
+  height: 30,
+  width: 70,
+  borderRadius: 3,
+  borderColor: '#FFF',
+  color: 'black',
+  backgroundColor: 'white',
+  justifyContent: 'flex-end',
+},
+
+buttonText: {
+  fontWeight: 'bold',
+  color: 'black',
+  fontSize: 18,
+  borderRadius: 3,
+  borderColor: '#FFF',
+},
+
+boxBody: {
+  flex: 3,
+  alignItems: 'stretch',
+  flexDirection: 'row',
+  padding: 10,
+  width: 800,
+},
+
+buttonText: {
+  fontWeight: 'bold',
+  color: 'black',
+  fontSize: 18,
+},
+
+button2: {
+  alignItems: 'center',
   height: 100,
-  width: 140,
+  width: 180,
   borderRadius: 3,
   borderColor: '#000',
-  backgroundColor: '#70BD85',
-  marginTop: 10,
+  color: 'black',
+  backgroundColor: '#CDCDB4',
+  marginTop: 20,
+  justifyContent: 'space-between',
 },
 });

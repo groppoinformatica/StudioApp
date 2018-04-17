@@ -8,7 +8,7 @@ import Cadastro from './src/features/Cadastro'
 export default class App extends Component {
   render() {
     return (
-      <Login/>
+      <Inicio/>
     )
   }
 }
