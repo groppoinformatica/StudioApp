@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {  StyleSheet, View, Text, TextInput, TouchableOpacity, } from 'react-native';
+import {  StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
 
 export default class Inicio extends Component {
   render() {
@@ -15,15 +15,15 @@ export default class Inicio extends Component {
               <Text style={styles.corpo}>09:40</Text>
               <View style={styles.boxOpcoes}>
                 <TouchableOpacity style={styles.button} >
-                  <Text style={styles.buttonText}>
-                    Conf
-                  </Text>
+                  {/* <Image
+                      style={styles.image}
+                      source={require('../../assets/images/Engrenagem.png')} /> */}
                 </TouchableOpacity> 
 
                 <TouchableOpacity style={styles.button} >
-                  <Text style={styles.buttonText}>
-                    Logout
-                  </Text>
+                  {/* <Image
+                    style={styles.image}
+                    source={require('../../assets/images/Sair.png')} /> */}
                 </TouchableOpacity>
               </View>
             </View>
@@ -37,43 +37,55 @@ export default class Inicio extends Component {
 
           <View style={styles.boxBody}>
 
-            <View style={styles.boxBotoes}>
+            <ScrollView style={styles.boxBotoes}>
 
               <TouchableOpacity style={styles.button2} >
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText2}>
                   Colaboradores
                 </Text>
+                {/* <Image
+                    style={styles.image}
+                    source={require('../../assets/images/Colaboradores.png')} /> */}
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button2} >
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText2}>
                   Comandas
                 </Text>
               </TouchableOpacity> 
 
-            </View>
+            </ScrollView>
 
-            <View style={styles.boxBotoes}>
+            <ScrollView style={styles.boxBotoes}>
 
               <TouchableOpacity style={styles.button2} >
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText2}>
                   Clientes
                 </Text>
+                {/* <Image
+                    style={styles.image}
+                    source={require('../../assets/images/Clientes.png')} /> */}
               </TouchableOpacity>
 
               <TouchableOpacity style={styles.button2} >
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText2}>
                   Estoques
                 </Text>
+                {/* <Image
+                    style={styles.image}
+                    source={require('../../assets/images/storage.png')} /> */}
               </TouchableOpacity>  
-            </View>
+            </ScrollView>
 
             <View style={styles.boxBotoes}>
 
               <TouchableOpacity style={styles.button2} >
-                <Text style={styles.buttonText}>
+                <Text style={styles.buttonText2}>
                   Serviços
                 </Text>
+                {/* <Image
+                    style={styles.image}
+                    source={require('../../assets/images/clerk.png')} /> */}
               </TouchableOpacity>
 
             </View>
@@ -89,7 +101,7 @@ export default class Inicio extends Component {
 const styles = StyleSheet.create({
   boxContainer: {
   flex: 1,
-  backgroundColor: '#F5F5F5',
+  backgroundColor: '#FFFAFA',
   flexDirection: 'column',
 },
 
@@ -120,7 +132,7 @@ boxHeaderInf: {
   justifyContent: 'space-between',
   paddingHorizontal: 20,
   paddingVertical: 2,
-  backgroundColor: '#87CEFA'
+  backgroundColor: '#1E90FF'
 },
 
 boxHeaderMenu: {
@@ -137,17 +149,14 @@ boxHeaderMenu: {
 
 boxOpcoes: {
   flexDirection: 'row',
+  marginTop: 5,
   justifyContent: 'space-between',
 },
 
 boxBotoes: {
   flex: 1,
   flexDirection: 'column',
-  alignItems: 'center',
-  justifyContent: 'space-around',
-  padding: 20,
-  height: 300,
-  width: 100,
+  padding: 10,
 },
 
 corpo: {
@@ -165,10 +174,11 @@ corpo2: {
 button: {
   alignItems: 'center',
   height: 30,
-  width: 70,
+  width: 60,
   borderRadius: 3,
   borderColor: '#FFF',
   color: 'black',
+  marginRight: 10,
   backgroundColor: 'white',
   justifyContent: 'flex-end',
 },
@@ -183,27 +193,31 @@ buttonText: {
 
 boxBody: {
   flex: 3,
-  alignItems: 'stretch',
   flexDirection: 'row',
   padding: 10,
-  width: 800,
+  marginBottom: 70,
 },
 
-buttonText: {
+buttonText2: {
   fontWeight: 'bold',
   color: 'black',
-  fontSize: 18,
+  fontSize: 22,
 },
 
 button2: {
   alignItems: 'center',
-  height: 100,
-  width: 180,
+  height: 170,
+  width: 240,
   borderRadius: 3,
   borderColor: '#000',
   color: 'black',
-  backgroundColor: '#CDCDB4',
+  backgroundColor: '#FFFFFF',
   marginTop: 20,
   justifyContent: 'space-between',
 },
+
+image: {
+  flex: 1,
+  resizeMode:'stretch'
+}
 });
