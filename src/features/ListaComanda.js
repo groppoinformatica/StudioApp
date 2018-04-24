@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {  View, Text, ScrollView, TouchableOpacity, Image, StyleSheet, } from 'react-native';
+
 import Comanda from './src/features/Comanda'
 
 export default class ListaComanda extends Component {
@@ -8,32 +9,49 @@ export default class ListaComanda extends Component {
         comandas: [
             {
                 id: 1,
-                Numero: 1,
-                Estado: 'Em Aberto',
+                numero: 1,
+                estado: 'Em Aberto',
+                emuso: true,
+                finalizado: false,
             },
             {
                 id: 2,
-                Numero: 2,
-                Estado: 'Livre',
+                numero: 2,
+                estado: 'Livre',
+                emuso: false,
+                finalizado: false,
             },
             {
                 id: 3,
-                Numero: 3,
-                Estado: 'Finalizada'
+                numero: 3,
+                estado: 'Finalizada',
+                emuso: false,
+                finalizado: true,
             },
             {
                 id: 4,
-                Numero: 4,
-                Estado: 'Em Aberto',
+                numero: 4,
+                estado: 'Em Aberto',
+                emuso: true,
+                finalizado: false,
             },
             {
                 id: 5,
-                Numero: 5,
-                Estado: 'Livre',
+                numero: 5,
+                estado: 'Livre',
+                emuso: false,
+                finalizado: false,
             },
         ]
     }
   render() {
+    const comanda = {
+        id: 8,
+        numero: 4,
+        estado: '',
+        emuso: false,
+        finalizado: false
+    }
     return (
       <View style={styles.boxContainer}>
 
@@ -45,10 +63,12 @@ export default class ListaComanda extends Component {
 
         <View style={styles.boxBody}>
 
-            <ScrollView>
-                { this.state.comandas.map(comanda => 
-                <Comanda key={comanda.id} data={comanda}
-                />) }
+            <ScrollView style={styles.boxBotoes}>
+                <TouchableOpacity style={styles.button2} >
+                    { this.state.comandas.map(comanda => 
+                    <Comanda key={comanda.id} data={comanda}
+                    />) }
+                </TouchableOpacity>
             </ScrollView>
 
         </View>           
@@ -56,7 +76,7 @@ export default class ListaComanda extends Component {
         </View>
 
       </View>
-    );
+    ); 
   }
 }
 
@@ -105,10 +125,28 @@ corpo: {
   },
 
 boxBody: {
-    flex: 3,
+    flex: 1,
     flexDirection: 'row',
     padding: 10,
     marginBottom: 70,
     backgroundColor: 'yellow'
+},
+
+boxBotoes: {
+    flex: 1,
+    flexDirection: 'column',
+    padding: 10,
+},
+
+button2: {
+    alignItems: 'center',
+    height: 170,
+    width: 240,
+    borderRadius: 3,
+    borderColor: '#000',
+    color: 'black',
+    backgroundColor: '#FFFFFF',
+    marginTop: 20,
+    justifyContent: 'space-between',
 },
 });
