@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
-import {  StyleSheet, View, Text, TextInput, TouchableOpacity, Image, ScrollView } from 'react-native';
+import {  StyleSheet, 
+  View, 
+  Text, 
+  TextInput, 
+  TouchableOpacity, 
+  Image, 
+  ScrollView } from 'react-native';
 
 export default class Inicio extends Component {
   render() {

@@ -1,77 +1,87 @@
 import React, { Component } from 'react';
-import {  View, Text, ScrollView, TouchableOpacity, Image, StyleSheet, } from 'react-native';
+import {  View,
+     Text, 
+     ScrollView, 
+     TouchableOpacity, 
+     Image,
+     TextInput,
+     StyleSheet, } from 'react-native';
 
-import Comanda from './src/features/Comanda'
+import Comanda from './Comanda'
 
 export default class ListaComanda extends Component {
     state = {
-        modalVisible: false,
         comandas: [
             {
                 id: 1,
                 numero: 1,
                 estado: 'Em Aberto',
-                emuso: true,
+                emUso: true,
                 finalizado: false,
             },
             {
                 id: 2,
                 numero: 2,
                 estado: 'Livre',
-                emuso: false,
+                emUso: false,
                 finalizado: false,
             },
             {
                 id: 3,
                 numero: 3,
                 estado: 'Finalizada',
-                emuso: false,
+                emUso: false,
                 finalizado: true,
             },
             {
                 id: 4,
                 numero: 4,
                 estado: 'Em Aberto',
-                emuso: true,
+                emUso: true,
                 finalizado: false,
             },
             {
                 id: 5,
                 numero: 5,
                 estado: 'Livre',
-                emuso: false,
+                emUso: false,
                 finalizado: false,
             },
         ]
     }
   render() {
-    const comanda = {
-        id: 8,
-        numero: 4,
-        estado: '',
-        emuso: false,
-        finalizado: false
-    }
     return (
       <View style={styles.boxContainer}>
 
         <View style={styles.boxContent}>
 
             <View style={styles.boxHeader}>
-                <Text style={styles.corpo}>Comandas</Text>
+                <View style={styles.boxHeaderInf}>
+                    <Text style={styles.corpo2}>Comandas</Text>
+                </View>
+
+                <View style={styles.boxHeaderInf}>
+                    <TextInput
+                        placeholder= 'Pesquisa de Comanda'
+                        style={styles.corpo}
+                    />
+                </View>
+
+                <View style={styles.boxHeaderInf}>
+                    <Text style={styles.corpo2}>Disponiveis - 2 </Text>
+                    <Text style={styles.corpo2}>Ocupadas - 3 </Text>
+                </View>
             </View>
 
-        <View style={styles.boxBody}>
+            <View style={styles.boxBody}>
 
-            <ScrollView style={styles.boxBotoes}>
-                <TouchableOpacity style={styles.button2} >
-                    { this.state.comandas.map(comanda => 
-                    <Comanda key={comanda.id} data={comanda}
-                    />) }
-                </TouchableOpacity>
-            </ScrollView>
+                <ScrollView contentContainerStyle={styles.boxBotoes}>
+                    { this.state.comandas.map(com => 
+                        <Comanda key={com.id} data={com}/>
+                    ) }
+                </ScrollView>
 
-        </View>           
+            </View>           
 
         </View>
 
@@ -83,7 +93,7 @@ export default class ListaComanda extends Component {
 const styles = StyleSheet.create({
 boxContainer: {
     flex: 1,
-    backgroundColor: '#FFFAFA',
+    backgroundColor: '#FFF',
     flexDirection: 'column',
 },
   
@@ -94,48 +104,57 @@ boxContent: {
 
 boxHeader: {
     flex: 1,
-    flexDirection: 'column',
+    flexDirection: 'row',
     alignItems: 'stretch',
     justifyContent: 'center',
-    marginTop: 10,
+    marginTop: 23,
     borderRadius: 3,
     borderColor: 'black',
     paddingVertical: 20,
     paddingHorizontal: 20,
-    backgroundColor: 'red',
+    backgroundColor: '#FFFAFA',
 },
 
 boxHeaderInf: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'stretch',
+    flexDirection: 'column',
+    alignItems: 'center',
     marginTop: 2,
     borderRadius: 5,
     borderColor: 'black',
-    justifyContent: 'space-between',
+    justifyContent: 'center',
     paddingHorizontal: 20,
     paddingVertical: 2,
-    backgroundColor: '#1E90FF'
+    backgroundColor: '#DCDCDC'
 },
 
 corpo: {
     fontWeight: 'bold',
     fontSize: 26,
     color: 'black',
+    width: 270,
+  },
+
+  corpo2: {
+    fontWeight: 'bold',
+    fontSize: 26,
+    color: 'black',
   },
 
 boxBody: {
-    flex: 1,
-    flexDirection: 'row',
+    flex: 3,
+    flexDirection: 'column',
     padding: 10,
     marginBottom: 70,
-    backgroundColor: 'yellow'
+    borderColor: '#000',
+    borderRadius: 3,
+    backgroundColor: '#DCDCDC'
 },
 
 boxBotoes: {
     flex: 1,
-    flexDirection: 'column',
-    padding: 10,
+    flexDirection: 'row',
+    padding: 10,    
 },
 
 button2: {

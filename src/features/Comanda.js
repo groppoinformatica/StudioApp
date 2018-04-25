@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
-import {  View, Text, } from 'react-native';
+import {  View, 
+  Text, 
+  StyleSheet, 
+  TouchableOpacity, } from 'react-native';
 
 export default class Comanda extends Component {
   render() {
     return (
-      <View>
-        <View style={styles.ComanInfo}>
-          <Text style={styles.NumCom}>{this.props.data.Numero}</Text> 
-          <Text style={styles.ComanInfo}>{this.props.data.Estado}</Text> 
-        </View>
+      <View style={styles.container}>
+        <TouchableOpacity style={styles.button2}>
+            <Text style={styles.NumCom}>{this.props.data.numero}</Text>
+            <Text style={styles.ComanInfo}>{this.props.data.estado}</Text>
+        </TouchableOpacity>
       </View>
     );
   }
@@ -16,20 +19,37 @@ export default class Comanda extends Component {
 
 const styles = StyleSheet.create({
 container: {
-    padding: 20,
-    backgroundColor: '#FFF',
-    marginBottom: 20,
-    borderRadius: 5,
-    flexDirection: 'row',
-    alignItems: 'center',
+  padding: 20,
+  backgroundColor: '#FFF',
+  marginBottom: 20,
+  borderRadius: 5,
+  flexDirection: 'column',
+  alignItems: 'center',
+  width: 200,
+  height: 150,
 },
 
 NumCom: {
-    fontSize: 20,
-    color: '#999',
+  fontSize: 36,
+  color: '#999',
 },
 
 ComanInfo: {
-    marginLeft: 10,
+  fontSize: 22,
+},
+
+button2: {
+  alignItems: 'center',
+  height: 110,
+  width: 180,
+  borderRadius: 3,
+  borderColor: '#000',
+  color: 'black',
+  backgroundColor: '#FFFFFF',
+  marginTop: 20,
+  fontSize: 22,
+  borderColor: '#000',
+  borderRadius: 3,
+  justifyContent: 'space-between',
 },
 });

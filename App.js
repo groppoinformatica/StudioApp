@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, 
+  Text, 
+  View } from 'react-native';
 
 import Login from './src/features/Login'
 import Inicio from './src/features/Inicio'
