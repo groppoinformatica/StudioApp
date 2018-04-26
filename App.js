@@ -10,11 +10,12 @@ import Comanda from './src/features/Comanda'
 import ListaComanda from './src/features/ListaComanda'
 import Cliente from './src/features/Cliente'
 import ComandaDados from './src/features/ComandaDados'
+import Profissional from './src/features/Profissional'
 
 export default class App extends Component {
   render() {
     return (
-      <Cliente/>
+      <ComandaDados/>
     )
   }
 }

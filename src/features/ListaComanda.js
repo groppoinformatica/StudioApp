@@ -69,7 +69,8 @@ export default class ListaComanda extends Component {
 
                 <View style={styles.boxHeaderInf}>
                     <Text style={styles.corpo2}>Disponiveis - 2 </Text>
-                    <Text style={styles.corpo2}>Ocupadas - 3 </Text>
+                    <Text style={styles.corpo2}>Ocupadas - 2 </Text>
+                    <Text style={styles.corpo2}>Finalizada 1 </Text>
                 </View>
             </View>
 

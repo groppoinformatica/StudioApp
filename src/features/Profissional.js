@@ -8,13 +8,13 @@ import {  View,
  } from 'react-native';
  import ImageBackground from '../layouts/ImageBackground'
 
-export default class Cliente extends Component {
+export default class Profissional extends Component {
   render() {
     return (
     <View style={styles.boxContainer}>
       
         <View style={styles.boxHeader}>
-            <Text style={styles.texto}> Informações do Cliente </Text>
+            <Text style={styles.texto}> Informações do Profissional </Text>
         </View>
 
         <View style={styles.boxBody}>
@@ -27,10 +27,11 @@ export default class Cliente extends Component {
             </View>
 
             <View style={styles.boxInf}>
-                <Text style={styles.corpo}>Nome Cliente </Text>
-                <Text style={styles.corpo}>Endereço </Text>
-                <Text style={styles.corpo}>Bairro </Text>
-                <Text style={styles.corpo}>Telefone </Text>
+                <Text style={styles.corpo}> Codigo </Text>
+                <Text style={styles.corpo}> Nome </Text>
+               
+                    <Text style={styles.texto}> Serviços Prestados </Text>
+
             </View>
         </View>
     </View>
@@ -50,7 +51,7 @@ boxHeader:{
     marginTop: 33,
     justifyContent: 'center',
     flexDirection: 'row',
-    backgroundColor: '#1E90FF',
+    backgroundColor: '#00FF00',
 },
 
 boxBody:{
@@ -58,13 +59,13 @@ boxBody:{
     flexDirection: 'column',
     justifyContent: 'center',
     backgroundColor: '#DCDCDC',
-    height: 300,
+    height: 400,
 },
 
 boxImage:{
     flex: 1,
     height: 250,
-    width: 300,
+    width: 180,
     marginLeft: 1,
     marginTop: 1,
 },
@@ -72,7 +73,7 @@ boxImage:{
 boxInf:{
     flex: 3,
     height: 150,
-    width: 200,
+    width: 400,
     marginLeft: 2,
 },
 
