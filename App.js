@@ -8,11 +8,13 @@ import Inicio from './src/features/Inicio'
 import Cadastro from './src/features/Cadastro'
 import Comanda from './src/features/Comanda'
 import ListaComanda from './src/features/ListaComanda'
+import Cliente from './src/features/Cliente'
+import ComandaDados from './src/features/ComandaDados'
 
 export default class App extends Component {
   render() {
     return (
-      <ListaComanda/>
+      <Cliente/>
     )
   }
 }

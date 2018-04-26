@@ -62,7 +62,7 @@ export default class ListaComanda extends Component {
 
                 <View style={styles.boxHeaderInf}>
                     <TextInput
-                        placeholder= 'Pesquisa de Comanda'
+                        placeholder= 'Pesquisa Comanda'
                         style={styles.corpo}
                     />
                 </View>
@@ -120,6 +120,7 @@ boxHeaderInf: {
     flexDirection: 'column',
     alignItems: 'center',
     marginTop: 2,
+    marginLeft: 5,
     borderRadius: 5,
     borderColor: 'black',
     justifyContent: 'center',
@@ -132,7 +133,8 @@ corpo: {
     fontWeight: 'bold',
     fontSize: 26,
     color: 'black',
-    width: 270,
+    width: 240,
+    marginLeft: 10,
   },
 
   corpo2: {
@@ -154,7 +156,8 @@ boxBody: {
 boxBotoes: {
     flex: 1,
     flexDirection: 'row',
-    padding: 10,    
+    padding: 10, 
+    marginLeft: 5,   
 },
 
 button2: {
