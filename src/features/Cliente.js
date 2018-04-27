@@ -47,7 +47,7 @@ boxContainer: {
 
 boxHeader:{
     flex: 1,
-    marginTop: 33,
+    marginTop: 2,
     justifyContent: 'center',
     flexDirection: 'row',
     backgroundColor: '#1E90FF',
@@ -64,7 +64,7 @@ boxBody:{
 boxImage:{
     flex: 1,
     height: 250,
-    width: 300,
+    width: 150,
     marginLeft: 1,
     marginTop: 1,
 },

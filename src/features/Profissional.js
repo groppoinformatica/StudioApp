@@ -48,10 +48,10 @@ boxContainer: {
 
 boxHeader:{
     flex: 1,
-    marginTop: 33,
+    marginTop: 2,
     justifyContent: 'center',
     flexDirection: 'row',
-    backgroundColor: '#00FF00',
+    backgroundColor: '#1E90FF',
 },
 
 boxBody:{
@@ -65,7 +65,7 @@ boxBody:{
 boxImage:{
     flex: 1,
     height: 250,
-    width: 180,
+    width: 150,
     marginLeft: 1,
     marginTop: 1,
 },
