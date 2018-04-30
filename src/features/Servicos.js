@@ -23,7 +23,7 @@ export default class Servicos extends Component {
                 </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={styles.buttonText}>
+            <TouchableOpacity style={styles.button}>
                 <Text style={styles.buttonText}>
                     Produto
                 </Text>
@@ -44,11 +44,16 @@ boxContainer: {
 
 boxHeader: {
     flex: 1,
-    backgroundColor: '#1E90FF'
+    backgroundColor: '#1E90FF',
+    alignItems: 'center',
 },
 
 boxBody: {
     flex: 8,
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    backgroundColor: '#DCDCDC',
+    height: 300,
 },
 
 texto:{
@@ -61,12 +66,15 @@ button:{
     height: 100,
     width: 100,
     fontSize: 16,
+    alignItems: 'center',
+    marginLeft: 55,
   },
   
 buttonText: {
     fontWeight: 'bold',
     color: 'black',
     fontSize: 22,
+    alignItems: 'center',
 },
 
 });

@@ -60,11 +60,11 @@ export default class ComandaDados extends Component {
           <View style={styles.divBody}>
             
             <View style={styles.divFooter}>
-              <Servicos/>
+              
             </View>
 
             <View style={styles.divFooter}>
-
+              <Servicos/>
             </View>
           </View>
 
@@ -80,7 +80,7 @@ boxContainer: {
 },
     
 boxHeader:{
-    flex: 1,
+    flex: 1, 
     marginTop: 23,
     flexDirection: 'row',
     backgroundColor: 'orange',

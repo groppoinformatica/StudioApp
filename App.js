@@ -16,7 +16,7 @@ import Servicos from './src/features/Servicos'
 export default class App extends Component {
   render() {
     return (
-      <Servicos/>
+      <ComandaDados/>
     )
   }
 }
